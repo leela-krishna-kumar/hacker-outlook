@@ -1,0 +1,14 @@
+commands used :
+
+npm init -y
+npm install axios cheerio
+npm install <requirepackges>
+
+
+Database design logic :
+
+cqlsh> create table wcm.gasdata(sn int, title text, link text, published timestamp, content text, PRIMARY KEY(sn, published, title, content)) WITH CLUSTERING ORDER BY (published DESC);
+
+cqlsh> insert into wcm.gasdata(sn, title, link, published, content) values (1, 'title4', 'www.bingo.com', '2020-07-30T09:45:00Z', 'abcd'); 
+
+---> It is able to remove duplicates and sort the posts according to timestamp.
