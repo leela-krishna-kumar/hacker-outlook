@@ -18,18 +18,27 @@ class PostController extends Controller
 
         $data['title'] = $this->title;
 
+        $catogeries = ['recent_stories', 'top_stories'];
+
         $data['posts_carousel'] = Post::select('title', 'content', 'link')->where('image', '!=', null)->orderBy('views', 'DESC')->limit(10)->get();
 
-        $data['top_story_big'] = Post::where('category', 'top_stories')->where('image', '!=', null)
-        ->orderBy('id', 'DESC')->limit(12)->get();
+        $data['posts_catogeries_unique'] = Post::select('category')->distinct('category')->pluck('category')->toArray();
 
-        $data['top_story_small1'] = Post::where('category', 'top_stories')->where('image', '!=', null)
-        ->orderBy('id', 'DESC')->limit(20)->offset(15)->get();
+        $data['posts_catogeries_unique'] = array_unique(array_merge($catogeries, $data['posts_catogeries_unique']));
 
-        $data['top_story_small2'] = Post::where('category', 'top_stories')->where('image', '!=', null)
-        ->orderBy('id', 'DESC')->limit(20)->offset(35)->get();
+        // dd($data['posts_catogeries_unique']);
 
-        $data['top_story_trending'] = Post::where('image', null)->orderBy('views', 'DESC')->limit(45)->offset(15)->get();
+
+        // $data['top_story_big'] = Post::where('category', 'top_stories')->where('image', '!=', null)
+        // ->orderBy('id', 'DESC')->limit(12)->get();
+
+        // $data['top_story_small1'] = Post::where('category', 'top_stories')->where('image', '!=', null)
+        // ->orderBy('id', 'DESC')->limit(20)->offset(15)->get();
+
+        // $data['top_story_small2'] = Post::where('category', 'top_stories')->where('image', '!=', null)
+        // ->orderBy('id', 'DESC')->limit(20)->offset(35)->get();
+
+        // $data['top_story_trending'] = Post::where('image', null)->orderBy('views', 'DESC')->limit(45)->offset(15)->get();
 
 
         // dd($data['posts_carousel']);

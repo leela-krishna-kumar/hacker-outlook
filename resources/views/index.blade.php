@@ -190,8 +190,32 @@
 
             </section><!-- /Slider Section --> --}}
 
+          @foreach ($posts_catogeries_unique as $posts_catogery)
+
+          @php
+              $data['post_big'] = $post_big = App\Models\Post::where('category', $posts_catogery)->where('image', '!=', null)
+            ->orderBy('published', 'DESC')->limit(3)->get();
+
+            $data['post_small1'] = $post_small1 = App\Models\Post::where('category', $posts_catogery)->where('image', '!=', null)
+            ->orderBy('published', 'DESC')->limit(6)->offset(15)->get();
+
+            $data['post_small2'] = $post_small2 = App\Models\Post::where('category', $posts_catogery)->where('image', '!=', null)
+            ->orderBy('published', 'DESC')->limit(6)->offset(21)->get();
+
+            $data['post_trending'] = $post_trending = App\Models\Post::where('category', $posts_catogery)->where('image', null)
+            ->orderBy('published', 'DESC')->limit(10)->offset(31)->get();
+          @endphp
+
             <!-- Trending Category Section -->
             <section id="trending-category" class="trending-category section">
+
+                <!-- Section Title -->
+                <div class="container section-title" data-aos="fade-up">
+                    <div class="section-title-container d-flex align-items-center justify-content-between">
+                        <h2>{{ strtoupper(str_replace('_',' ', $posts_catogery)) }}</h2>
+                        <p><a href="categories.html">See All {{ strtoupper(str_replace('_',' ', $posts_catogery)) }}</a></p>
+                    </div>
+                </div><!-- End Section Title -->
 
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -199,20 +223,20 @@
                         <div class="row g-5">
                             <div class="col-lg-4">
 
-                                {{-- {{ strtoupper(str_replace('_',' ', $top_story->category)) }} --}}
+                                {{-- {{ strtoupper(str_replace('_',' ', $post->category)) }} --}}
 
-                                @foreach ($top_story_big as $top_story)
+                                @foreach ($post_big as $post)
 
                                 <div class="post-entry lg">
-                                    <a href="{{ $top_story->link }}" target="_blank"><img src="{{ $top_story->image }}" alt="" class="img-fluid"></a>
-                                    <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $top_story->published }}</span></div>
-                                    <h2><a href="{{ $top_story->link }}" target="_blank">{{ $top_story->title }}</a></h2>
-                                    <p class="mb-4 d-block">{{ $top_story->content }}</p>
+                                    <a href="{{ $post->link }}" target="_blank"><img src="{{ $post->image }}" alt="" class="img-fluid"></a>
+                                    <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $post->published }}</span></div>
+                                    <h2><a href="{{ $post->link }}" target="_blank">{!! $post->title !!}</a></h2>
+                                    <p class="mb-4 d-block">{{ strip_tags($post->content) }}</p>
 
                                     <div class="d-flex align-items-center author">
                                         {{-- <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div> --}}
                                         <div class="name">
-                                            <h3 class="m-0 p-0">{{ $top_story->source }}</h3>
+                                            <h3 class="m-0 p-0">{{ $post->source }}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -225,21 +249,35 @@
                                 <div class="row g-5">
                                     <div class="col-lg-4 border-start custom-border">
 
-                                        @foreach ($top_story_small1 as $top_story)
+                                        @foreach ($post_small1 as $post)
                                         <div class="post-entry">
-                                            <a href="{{ $top_story->link }}" target="__blank"><img src="{{ $top_story->image }}" alt="" class="img-fluid"></a>
-                                            <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $top_story->published }}</span></div>
-                                            <h2><a href="{{ $top_story->link }}" target="__blank">{{ $top_story->title }}</a></h2>
+                                            <a href="{{ $post->link }}" target="__blank"><img src="{{ $post->image }}" alt="" class="img-fluid"></a>
+                                            <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $post->published }}</span></div>
+                                            <h2><a href="{{ $post->link }}" target="__blank">{{ $post->title }}</a></h2>
+
+                                            <div class="d-flex align-items-center author">
+                                                {{-- <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div> --}}
+                                                <div class="name">
+                                                    <h3 class="m-0 p-0">{{ $post->source }}</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 border-start custom-border">
 
-                                        @foreach ($top_story_small2 as $top_story)
+                                        @foreach ($post_small2 as $post)
                                         <div class="post-entry">
-                                            <a href="{{ $top_story->link }}" target="__blank"><img src="{{ $top_story->image }}" alt="" class="img-fluid"></a>
-                                            <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $top_story->published }}</span></div>
-                                            <h2><a href="{{ $top_story->link }}" target="__blank">{{ $top_story->title }}</a></h2>
+                                            <a href="{{ $post->link }}" target="__blank"><img src="{{ $post->image }}" alt="" class="img-fluid"></a>
+                                            <div class="post-meta"><span class="date">Top Story</span> <span class="mx-1">•</span> <span>{{ $post->published }}</span></div>
+                                            <h2><a href="{{ $post->link }}" target="__blank">{{ $post->title }}</a></h2>
+
+                                            <div class="d-flex align-items-center author">
+                                                {{-- <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div> --}}
+                                                <div class="name">
+                                                    <h3 class="m-0 p-0">{{ $post->source }}</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                         @endforeach
                                     </div>
@@ -250,12 +288,12 @@
                                         <div class="trending">
                                             <h3>Trending</h3>
                                             <ul class="trending-post">
-                                                @foreach ($top_story_trending as $top_story)
+                                                @foreach ($post_trending as $post)
                                                 <li>
-                                                    <a href="{{ $top_story->link }}">
+                                                    <a href="{{ $post->link }}">
                                                         <span class="number">1</span>
-                                                        <h3>{{ $top_story->title }}</h3>
-                                                        <span class="author">{{ $top_story->source ?? 'Google News' }}</span>
+                                                        <h3>{{ $post->title }}</h3>
+                                                        <span class="author">{{ $post->source ?? 'Google News' }}</span>
                                                     </a>
                                                 </li>
                                                 @endforeach
@@ -272,6 +310,9 @@
                 </div>
 
             </section><!-- /Trending Category Section -->
+
+        @endforeach
+
             {{--
             <!-- Culture Category Section -->
             <section id="culture-category" class="culture-category section">
