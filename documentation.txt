@@ -1,0 +1,247 @@
+Sonarqube commands :
+
+sudo systemctl start sonar
+sudo systemctl status sonar
+sudo -Hu leela /opt/sonarqube/bin/linux-x86-64/sonar.sh console
+
+https://linux.how2shout.com/install-sonarqube-on-ubuntu-20-04-18-04-server/
+
+Error : increase virtual memory --> Solution in above link
+
+
+platform colors: #155F8A-blue,
+
+regex to search blade variables = \{\{(.*?)\}\}
+
+
+https://codepen.io/UIUXer/pen/BVaEwy
+
+https://github.com/jamesmills/laravel-timezone
+
+https://www.joedog.org/siege-home/
+
+https://github.com/Stichoza/google-translate-php
+https://cloud.google.com/translate/docs/languages
+https://github.com/sarfraznawaz2005/loading
+
+https://gist.github.com/alicangnll/d3cebc638f2fe7e50448ea5731b434f9
+https://www.etutorialspoint.com/index.php/341-how-to-convert-text-to-speech-using-php
+https://cloud.google.com/text-to-speech/docs/voices
+
+https://stackoverflow.com/questions/14723973/text-to-speech-in-php-with-google-translate
+
+https://www.cloudways.com/blog/laravel-stripe-integration/
+https://laravel.com/docs/9.x/billing
+https://webkul.com/blog/laravel-ecommerce-recurring-payments-subscription/
+
+// Email templates embed images, videos
+https://stackoverflow.com/questions/26067990/embed-dropbox-website-to-an-html-website
+https://www.dropbox.com/developers/embedder
+https://help.dropbox.com/files-folders/share/banned-links
+
+https://github.com/sarfraznawaz2005/loading
+https://webkul.github.io/csspin/
+
+https://medium.com/@victorsteven/choose-to-send-an-email-now-or-at-a-later-date-using-laravel-vuejs-and-cronjob-task-scheduler-68c76713b6e7
+https://dev.to/kingsconsult/schedule-a-task-to-run-at-a-specific-time-in-laravel-cronjob-5aaf
+https://github.com/Kingsconsult/laravel-schedule-job
+https://stackoverflow.com/questions/67540062/how-to-schedule-an-email-at-a-specific-date-and-time-with-the-gmail-api
+https://github.com/dacastro4/laravel-gmail
+
+https://laravel.io/forum/01-30-2016-display-form-element-input-select-when-change-in-drop-down-option-or-tick-on-checkbox
+
+https://www.positronx.io/laravel-custom-authentication-login-and-registration-tutorial/
+
+https://www.cluemediator.com/international-telephone-input-with-country-flags-and-dial-codes-using-jquery
+
+https://stackoverflow.com/questions/16673284/this-parenttr-remove-doe-not-delete-the-tablerow-from-the-view
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-mongodb-on-ubuntu-20-04
+
+https://linuxhint.com/send_emails_laravel_smtp/
+
+https://www.webslesson.info/2019/09/add-or-remove-dynamic-dependent-select-box-using-jquery-with-php-ajax.html
+
+https://www.webslesson.info/2018/03/ajax-dynamic-dependent-dropdown-in-laravel.html
+
+https://hashids.org/php/
+
+https://github.com/vinkla/hashids
+
+https://sampo.co.uk/blog/masking-ids-in-urls-using-hash-ids-in-laravel
+
+https://www.itsolutionstuff.com/post/laravel-multi-select-dropdown-with-checkbox-exampleexample.html
+
+https://codingdriver.com/how-to-use-select-2-dropdown-in-laravel-for-multiple-select.html
+
+https://www.codecheef.org/article/how-to-get-multiple-selected-values-of-select-box-in-laravel
+
+https://www.webslesson.info/2018/09/laravel-pagination-using-ajax.html
+https://github.com/mewebstudio/Purifier
+https://github.com/Seldaek/monolog - logs reader
+https://www.fail2ban.org/wiki/index.php/Main_Page
+
+git process :
+
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-add-and-push-an-existing-project-to-GitLab
+
+Stage all changes
+commit
+Push
+
+Git’s remote push commands for GitLab :
+
+For GitLab users who simply want a quick overview of the commands to run in the existing project to push to GitLab, here they are.
+
+    git init
+    git add .
+    git add --all -- ':!config/database.php'
+    git commit -m "Push existing project to GitLab 1"
+    git remote add source https://gitlab.com/leela5/tmp-client.git
+    git push -u -f source master
+
+    git remote add source https://gitlab.com/leela5/secureitlab-website.git
+
+
+These commands assume a GitLab repository named example-website and a user account named cameronmcnz.
+
+
+//sonar qube commands
+
+https://linux.how2shout.com/how-to-install-sonarqube-on-ubuntu-22-04-lts-server/
+
+sudo systemctl daemon-reload
+sudo systemctl enable sonar
+sudo systemctl start sonar
+sudo systemctl status sonar
+
+or
+
+sudo -Hu sonarh2s /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+sudo -Hu sonarh2s /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+sudo -Hu sonarh2s /opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
+sudo -Hu leela /opt/sonarqube/bin/linux-x86-64/sonar.sh console
+
+
+//response capture links
+
+https://client.testmyplan.io/test-response-email/notifyviacall
+https://client.testmyplan.io/test-response-email/notifyviavoicerecord
+https://client.testmyplan.io/test-response-email/acknowledge
+https://client.testmyplan.io/test-response-email/form
+
+
+https://client.testmyplan.io/response-capture/demo/jR/bGVlbGFAdGVzdG15cGxhbi5pbw==/notifyviacall
+https://client.testmyplan.io/response-capture/demo/jR/bGVlbGFAdGVzdG15cGxhbi5pbw==/notifyviavoicerecord
+https://client.testmyplan.io/response-capture/demo/jR/bGVlbGFAdGVzdG15cGxhbi5pbw==/acknowledge
+https://client.testmyplan.io/response-capture/demo/jR/bGVlbGFAdGVzdG15cGxhbi5pbw==/form
+
+
+http://localhost:8000/test-response-email/notifyviacall
+http://localhost:8000/test-response-email/notifyviavoicerecord
+http://localhost:8000/test-response-email/acknowledge
+
+commands:
+
+ssh  root@139.59.26.14
+
+scp -r Desktop/tmp_client/public root@139.59.26.14:/home/tmp_client/
+scp -r Desktop/tmp_client/app/Http/Controllers/ root@139.59.26.14:/home/tmp_client/app/Http/
+scp -r Desktop/tmp_client/resources/views/ root@139.59.26.14:/home/tmp_client/resources/
+scp -r Desktop/tmp_client/routes/web.php root@139.59.26.14:/home/tmp_client/routes/
+scp -r Desktop/tmp_client/app/Models/ root@139.59.26.14:/home/tmp_client/app/
+
+scp -r Desktop/tmp_spr/app/Http/Controllers/ root@139.59.26.14:/home/tmp_spr/app/Http/
+scp -r Desktop/tmp_spr/resources/views/ root@139.59.26.14:/home/tmp_spr/resources/
+scp -r Desktop/tmp_spr/routes/web.php root@139.59.26.14:/home/tmp_spr/routes/
+scp -r Desktop/tmp_spr/public root@139.59.26.14:/home/tmp_spr/
+scp -r Desktop/tmp_spr/app/Models/ root@139.59.26.14:/home/tmp_spr/app/
+
+
+Droplet Join collaboration link:
+
+tmp_client - https://prod.liveshare.vsengsaas.visualstudio.com/join?734E94FCCCE902EB52347D522D8FC4E2EE4A
+tmp_spr - https://prod.liveshare.vsengsaas.visualstudio.com/join?5E7139DCED144F17F0BCEE4991B50CEE686F
+
+Live Share: Repair Installation
+
+vs code terminal commad :
+code --user-data-dir="Directory_Name"
+
+
+composer require jenssegers/mongodb --ignore-platform-reqs
+
+Run : php artisan schedule:work 'along with' php artisan serve
+
+while true; do php artisan schedule:run; sleep 20; done
+
+composer dump-autoload
+php artisan config:clear
+php artisan config:cache
+
+php artisan queue:work
+
+php artisan queue:work redis --tries=3
+
+https://www.oulub.com/en-US/Laravel/queues-dealing-with-failed-jobs
+
+php artisan serve --host=139.59.26.14 --port=8000
+
+php artisan serve --host=192.168.1.44 --port=8000
+
+php artisan serve --host=139.59.77.102 --port=8000
+
+------------------------------
+
+Mongodb Setup :
+https://www.digitalocean.com/community/tutorials/how-to-secure-mongodb-on-ubuntu-20-04
+https://www.digitalocean.com/community/tutorials/how-to-configure-remote-access-for-mongodb-on-ubuntu-20-04
+
+
+db.createUser(
+{
+ user: "tmpDev",
+ pwd:  "tmpDev@123c",
+ roles:
+ [
+			{
+				"role" : "root",
+				"db" : "admin"
+			},
+			{
+				"role" : "readWriteAnyDatabase",
+				"db" : "admin"
+			},
+			{
+				"role" : "userAdminAnyDatabase",
+				"db" : "admin"
+			}
+		] } );
+
+		ufw allow 27017/tcp
+		ufw delete allow 27017/tcp
+		ufw status
+
+
+		sudo ufw deny 8000/tcp
+sudo ufw delete deny 27017
+sudo ufw deny 27017/tcp
+sudo ufw status
+
+Twitter api
+
+https://www.itsolutionstuff.com/post/laravel-5-twitter-api-using-thujohn-twitter-composer-package-tutorialexample.html
+https://stackoverflow.com/questions/68125481/twitter-api-asatymic-twitter-with-laravel-8
+https://stackoverflow.com/questions/8389796/why-this-error-read-only-application-cannot-post
+https://github.com/atymic/twitter
+
+
+validations
+
+http://www.designchemical.com/blog/index.php/jquery/email-validation-using-jquery/
+
+Dumped Databse Tables
+----------------------
+
+Ricrd, Risks, Incident-Cause Map, Teams Dependency Group
