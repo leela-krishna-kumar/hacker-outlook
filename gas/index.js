@@ -85,7 +85,6 @@ Object.entries(urlsToCheck).forEach(([category, entries]) => {
                 );
             });
     });
-<<<<<<< HEAD
 });
 
 const saveData = (html, category, source) => {
@@ -155,68 +154,4 @@ const saveData = (html, category, source) => {
 };
 
 // Close MySQL connection when done (or handle gracefully in a larger application)
-=======
-
-    const saveData = (html) => {
-        const data = [];
-        const $ = cheerio.load(html, { xmlMode: true });
-
-        $("item").each((i, elem) => {
-            data.push({
-                title: $(elem).find("title").text(),
-                link: $(elem).find("link").text(),
-                published: $(elem).find("pubDate").text(),
-                content: $(elem).find("description").text(),
-                image:
-                    $(elem).find("media\\:content").attr("url") ||
-                    $(elem).find("enclosure").attr("url"), // Use media:content URL if it exists
-            });
-        });
-
-        data.forEach((item, index) => {
-            const query = `
-                INSERT INTO posts (category, type, image, title, link, published, content)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-                ON DUPLICATE KEY UPDATE
-                    category = VALUES(category),
-                    type = VALUES(type),
-                    image = VALUES(image),
-                    title = VALUES(title),
-                    published = VALUES(published),
-                    content = VALUES(content)
-            `;
-            const dateObj = new Date(item.published);
-
-            // Format to MySQL DATETIME format
-            const mysqlDateTime = dateObj
-                .toISOString()
-                .slice(0, 19)
-                .replace("T", " ");
-
-            const params = [
-                category,
-                "carousel",
-                item.image,
-                item.title,
-                item.link,
-                mysqlDateTime,
-                item.content,
-            ];
-
-            db.query(query, params, (err) => {
-                if (err) {
-                    console.error(
-                        `Error inserting data for SN ${index + 1}:`,
-                        err.message
-                    );
-                    return;
-                }
-                console.log(`Data inserted for SN ${index + 1}`);
-            });
-        });
-    };
-});
-
-// Close MySQL connection when done
->>>>>>> 42d3897 (push 3)
 process.on("exit", () => db.end());
