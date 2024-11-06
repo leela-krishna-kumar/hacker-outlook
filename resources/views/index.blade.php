@@ -13,8 +13,8 @@
 
                 <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto me-xl-0">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
-                    <img style="width:39px; height:auto" src="{{ asset('/img/favicon_new.png')}}" alt="">
-                    <h1 class="sitename" style="font-weight: 600;">Hacker Outlook</h1>
+                    {{-- <img style="width:39px; height:auto" src="{{ asset('/img/favicon_new.png')}}" alt=""> --}}
+                    <h1 class="sitename">Hacker Outlook</h1>
                 </a>
 
                 <nav id="navmenu" class="navmenu">
