@@ -2,7 +2,8 @@
 <html lang="en">
 
     <head>
-        @include('layouts.head')
+
+@include('layouts.head')
     </head>
 
     <body class="index-page">
@@ -10,10 +11,10 @@
         <header id="header" class="header d-flex align-items-center sticky-top">
             <div class="container position-relative d-flex align-items-center justify-content-between">
 
-                <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto me-xl-0">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
-                    {{-- <img style="width:100%; height:100%" src="{{ asset('/img/hackeroutlook12.png')}}" alt=""> --}}
-                    <h1 class="sitename">Hacker Outlook</h1>
+                    <img style="width:39px; height:auto" src="{{ asset('/img/favicon_new.png')}}" alt="">
+                    <h1 class="sitename" style="font-weight: 600;">Hacker Outlook</h1>
                 </a>
 
                 <nav id="navmenu" class="navmenu">
@@ -197,13 +198,13 @@
             ->orderBy('published', 'DESC')->limit(3)->get();
 
             $data['post_small1'] = $post_small1 = App\Models\Post::where('category', $posts_catogery)->where('image', '!=', null)
-            ->orderBy('published', 'DESC')->limit(6)->offset(15)->get();
+            ->orderBy('published', 'DESC')->limit(6)->offset(3)->get();
 
             $data['post_small2'] = $post_small2 = App\Models\Post::where('category', $posts_catogery)->where('image', '!=', null)
-            ->orderBy('published', 'DESC')->limit(6)->offset(21)->get();
+            ->orderBy('published', 'DESC')->limit(6)->offset(9)->get();
 
             $data['post_trending'] = $post_trending = App\Models\Post::where('category', $posts_catogery)->where('image', null)
-            ->orderBy('published', 'DESC')->limit(10)->offset(31)->get();
+            ->orderBy('published', 'DESC')->limit(10)->offset(15)->get();
           @endphp
 
             <!-- Trending Category Section -->
@@ -213,7 +214,7 @@
                 <div class="container section-title" data-aos="fade-up">
                     <div class="section-title-container d-flex align-items-center justify-content-between">
                         <h2>{{ strtoupper(str_replace('_',' ', $posts_catogery)) }}</h2>
-                        <p><a href="categories.html">See All {{ strtoupper(str_replace('_',' ', $posts_catogery)) }}</a></p>
+                        {{-- <p><a href="{{ url('/') }}">See All {{ strtoupper(str_replace('_',' ', $posts_catogery)) }}</a></p> --}}
                     </div>
                 </div><!-- End Section Title -->
 
